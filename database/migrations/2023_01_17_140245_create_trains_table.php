@@ -21,9 +21,9 @@ class CreateTrainsTable extends Migration
             $table->string('departure_time');
             $table->string('arrival_time');
             $table->string('train_code', 12);
-            $table->tinyInteger('numbre_of_carriages')->nullable();
-            $table->string('in_time', 15)->nullable();
-            $table->string('deleted', 15)->nullable();
+            $table->tinyInteger('number_of_carriages')->nullable();
+            $table->boolean('in_time')->nullable();
+            $table->boolean('deleted')->nullable();
             $table->timestamps();
         });
     }
