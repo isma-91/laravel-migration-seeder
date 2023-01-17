@@ -1,1 +1,44 @@
-//
+@import 'partials/variables';
+@import 'partials/reset';
+@import 'partials/generals';
+
+
+header {
+    padding: 3rem;
+    margin-bottom: 2rem;
+    background-color: salmon;
+    text-align: center;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+
+    width: calc((100% - 2rem) / 2);
+    background-color: $secondary_color;
+
+    border-radius: 20px;
+    border: 3px solid white;
+}
+
+
+footer {
+    padding: 3rem;
+    margin-top: 2rem;
+    background-color: salmon;
+    text-align: center;
+}

@@ -1,28 +1,28 @@
 @extends('guest.layouts.base')
 
 @section('content')
-    <ul>
+    <ul class="container">
         @foreach ($trains as $train)
             <li class="card">
 
                 @if ($train->deleted === 1)
-                    <p>Agenzia: {{ $train->agency }}</p>
-                    <p>Stazione di partenza: {{ $train->departure_station }}</p>
-                    <p>Stazione di arrivo: {{ $train->arrival_station }}</p>
-                    <p>Orario di partenza: {{ $train->departure_time }}</p>
-                    <p>TRENO CANCELLATO</p>
+                    <p><span class="card-title">Agenzia:</span> {{ $train->agency }}</p>
+                    <p><span class="card-title">Stazione di partenza:</span> {{ $train->departure_station }}</p>
+                    <p><span class="card-title">Stazione di arrivo:</span> {{ $train->arrival_station }}</p>
+                    <p><span class="card-title">Orario di partenza:</span> {{ $train->departure_time }}</p>
+                    <p class="danger">TRENO CANCELLATO</p>
                 @else
-                    <p>Agenzia: {{ $train->agency }}</p>
-                    <p>Stazione di partenza: {{ $train->departure_station }}</p>
-                    <p>Stazione di arrivo: {{ $train->arrival_station }}</p>
-                    <p>Orario di partenza: {{ $train->departure_time }}</p>
-                    <p>Orario di arrivo: {{ $train->arrival_time }}</p>
-                    <p>Codice treno: {{ $train->train_code }}</p>
-                    <p>Numero carrozze: {{ $train->number_of_carriages }}</p>
+                    <p><span class="card-title">Agenzia:</span> {{ $train->agency }}</p>
+                    <p><span class="card-title">Stazione di partenza:</span> {{ $train->departure_station }}</p>
+                    <p><span class="card-title">Stazione di arrivo:</span> {{ $train->arrival_station }}</p>
+                    <p><span class="card-title">Orario di partenza:</span> {{ substr($train->departure_time, 0, 5) }}</p>
+                    <p><span class="card-title">Orario di arrivo:</span> {{ substr($train->arrival_time, 0, 5) }}</p>
+                    <p><span class="card-title">Codice treno:</span> {{ $train->train_code }}</p>
+                    <p><span class="card-title">Numero carrozze:</span> {{ $train->number_of_carriages }}</p>
                     @if ($train->in_time === 1)
-                        <p>Stato: in orario</p>
+                        <p><span class="card-title">Stato:</span> in orario</p>
                     @else
-                        <p>Stato: in ritardo!</p>
+                        <p><span class="card-title">Stato:</span> in ritardo!</p>
                     @endif
                 @endif
 

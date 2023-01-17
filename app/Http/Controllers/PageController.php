@@ -9,8 +9,10 @@ class PageController extends Controller
 {
     public function home() {
         $trains = Trains::all();
+
         return view('guest.trains', [
             'trains' => $trains,
+
         ]);
     }
 }
