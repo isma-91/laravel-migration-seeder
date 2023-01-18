@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Trains;
+use App\Train;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function home() {
-        $trains = Trains::all();
+        $trains = Train::all();
 
         return view('guest.trains', [
             'trains' => $trains,
