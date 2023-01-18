@@ -9,13 +9,13 @@
                     <p><span class="card-title">Agenzia:</span> {{ $train->agency }}</p>
                     <p><span class="card-title">Stazione di partenza:</span> {{ $train->departure_station }}</p>
                     <p><span class="card-title">Stazione di arrivo:</span> {{ $train->arrival_station }}</p>
-                    <p><span class="card-title">Orario di partenza:</span> {{ $train->departure_time }}</p>
+                    <p><span class="card-title">Orario di partenza:</span>  {{ date("H:i", strtotime($train->departure_time)) }}</p>
                     <p class="danger">TRENO CANCELLATO</p>
                 @else
                     <p><span class="card-title">Agenzia:</span> {{ $train->agency }}</p>
                     <p><span class="card-title">Stazione di partenza:</span> {{ $train->departure_station }}</p>
                     <p><span class="card-title">Stazione di arrivo:</span> {{ $train->arrival_station }}</p>
-                    <p><span class="card-title">Orario di partenza:</span> {{ substr($train->departure_time, 0, 5) }}</p>
+                    <p><span class="card-title">Orario di partenza:</span> {{ date("H:i", strtotime($train->departure_time)) }}</p>
                     <p><span class="card-title">Orario di arrivo:</span> {{ substr($train->arrival_time, 0, 5) }}</p>
                     <p><span class="card-title">Codice treno:</span> {{ $train->train_code }}</p>
                     <p><span class="card-title">Numero carrozze:</span> {{ $train->number_of_carriages }}</p>
